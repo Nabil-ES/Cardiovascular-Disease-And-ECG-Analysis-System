@@ -189,10 +189,10 @@ st.markdown("""
 
 with st.sidebar:
     st.markdown("## 🚀 Navigation")
-    if st.button("🏠 Home",              key="nav_home"):   st.session_state.page = "Welcome";           st.experimental_rerun()
-    if st.button("❤️ Cardio Prediction", key="nav_cardio"): st.session_state.page = "Cardio Prediction"; st.experimental_rerun()
-    if st.button("🫀 ECG Prediction",    key="nav_ecg"):    st.session_state.page = "ECG Prediction";    st.experimental_rerun()
-    if st.button("🚪 Exit",              key="nav_exit"):   st.session_state.page = "Exit";              st.experimental_rerun()
+    if st.button("🏠 Home",              key="nav_home"):   st.session_state.page = "Welcome";           st.rerun()
+    if st.button("❤️ Cardio Prediction", key="nav_cardio"): st.session_state.page = "Cardio Prediction"; st.rerun()
+    if st.button("🫀 ECG Prediction",    key="nav_ecg"):    st.session_state.page = "ECG Prediction";    st.rerun()
+    if st.button("🚪 Exit",              key="nav_exit"):   st.session_state.page = "Exit";              st.rerun()
 
 
 def show_welcome():
@@ -215,11 +215,11 @@ def show_welcome():
     with col1:
         if st.button("❤️ Cardio Prediction", key="welcome_cardio"):
             st.session_state.page = "Cardio Prediction"
-            st.experimental_rerun()
+            st.rerun()
     with col2:
         if st.button("🧠 ECG Prediction", key="welcome_ecg"):
             st.session_state.page = "ECG Prediction"
-            st.experimental_rerun()
+            st.rerun()
 
     st.markdown('<div style="text-align:center; font-size:30px; font-weight:800; margin:50px 0 30px 0;">🚀 AI Engines Powering The Platform</div>', unsafe_allow_html=True)
 
@@ -361,13 +361,13 @@ def show_exit():
     col1, col2, col3 = st.columns(3)
     with col1:
         if st.button("🔄 Back to Home", key="exit_home"):
-            st.session_state.page = "Welcome"; st.experimental_rerun()
+            st.session_state.page = "Welcome"; st.rerun()
     with col2:
         if st.button("❤️ Cardio Prediction", key="exit_cardio"):
-            st.session_state.page = "Cardio Prediction"; st.experimental_rerun()
+            st.session_state.page = "Cardio Prediction"; st.rerun()
     with col3:
         if st.button("🫀 ECG Prediction", key="exit_ecg"):
-            st.session_state.page = "ECG Prediction"; st.experimental_rerun()
+            st.session_state.page = "ECG Prediction"; st.rerun()
 
     st.markdown('<div style="text-align:center; margin-top:30px; font-size:18px; opacity:0.8;">💖 Stay Healthy • Stay Safe • Protect Your Heart</div>', unsafe_allow_html=True)
 
