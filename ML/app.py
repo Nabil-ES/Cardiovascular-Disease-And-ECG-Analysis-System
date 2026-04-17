@@ -248,7 +248,7 @@ def show_welcome():
 
 def show_ecg_prediction():
     try:
-        from ECG import ECG
+        from Ecg import ECG
     except ImportError:
         st.error("ECG module not found. Make sure Ecg.py is in the same directory.")
         return
