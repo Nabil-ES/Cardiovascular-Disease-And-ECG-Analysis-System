@@ -169,17 +169,21 @@ class ECG:
 
 		return test_final
 		
-	def DimensionalReduciton(self,test_final):
-		
-		pca_loaded_model = joblib.load('PCA_ECG (1).pkl')
-		result = pca_loaded_model.transform(test_final)
-		final_df = pd.DataFrame(result)
-		return final_df
+	def DimensionalReduciton(self, test_final):
+    	import os
+    	BASE_DIR = os.path.dirname(__file__)
 
-	def ModelLoad_predict(self,final_df):
-		
-		loaded_model = joblib.load('Heart_Disease_Prediction_using_ECG (4).pkl')
-		result = loaded_model.predict(final_df)
+    	pca_loaded_model = joblib.load(os.path.join(BASE_DIR, 'PCA_ECG (1).pkl'))
+    	result = pca_loaded_model.transform(test_final)
+    	final_df = pd.DataFrame(result)
+    	return final_df
+
+	def ModelLoad_predict(self, final_df):
+    	import os
+    	BASE_DIR = os.path.dirname(__file__)
+
+    	loaded_model = joblib.load(os.path.join(BASE_DIR, 'Heart_Disease_Prediction_using_ECG (4).pkl'))
+    	result = loaded_model.predict(final_df)
 		if result[0] == 1:
 			return "You ECG corresponds to Myocardial Infarction"
 		elif result[0] == 0:
