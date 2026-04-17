@@ -377,7 +377,7 @@ page = st.session_state.page
 
 if   page == "Welcome":           show_welcome()
 elif page == "Cardio Prediction": show_cardio_prediction()
-elif page == "ECG Prediction":    show_ecg_prediction()
+elif page == "ECG Prediction":    show_ECG()
 elif page == "Exit":              show_exit()
 
 st.markdown("""
